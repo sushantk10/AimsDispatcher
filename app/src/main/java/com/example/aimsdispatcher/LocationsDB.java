@@ -72,12 +72,12 @@ public class LocationsDB {
         Cursor c= ourDatabase.query(DATABASE_TABLE,columns,null,null,null,null,null);
         String result="";
         int iRowID = c.getColumnIndex(KEY_ROWID);
-        int iName = c.getColumnIndex(KEY_LATITUDE);
-        int iCell =c.getColumnIndex(KEY_LONGITUDE);
+        int iLat = c.getColumnIndex(KEY_LATITUDE);
+        int iLong =c.getColumnIndex(KEY_LONGITUDE);
         for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
 
-            result= result+c.getString(iRowID).trim()+": "+"Latitude: "+c.getString(iName).trim()+" Longitude: "+
-                    c.getString(iCell).trim()+"\n";
+            result= result+c.getString(iRowID).trim()+": "+"Latitude: "+c.getString(iLat).trim()+" Longitude: "+
+                    c.getString(iLong).trim()+"\n";
         }
         c.close();
 
